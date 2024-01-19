@@ -15,6 +15,7 @@ const srcDirectoryPath = `${projectDirectoryPath}/src`;
 const jsOutputDirectoryName = 'js';
 const cssOutputDirectoryName = 'css';
 const templatesDirectoryPath = `${srcDirectoryPath}/templates`;
+const configDirectoryPath = `${projectDirectoryPath}/config`;
 
 module.exports = function (environment) {
 	config = {
@@ -44,7 +45,14 @@ module.exports = function (environment) {
 								url: false,
 							},
 						},
-						'postcss-loader',
+						{
+							loader: 'postcss-loader',
+							options: {
+								postcssOptions: {
+									config: `${configDirectoryPath}/postcss.config.cjs`,
+								},
+							},
+						},
 						{
 							loader: 'sass-loader',
 							options: {
