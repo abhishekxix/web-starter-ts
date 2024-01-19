@@ -4,10 +4,13 @@
   "description": "",
   "main": "src/main.ts",
   "scripts": {
+    "init": "sh .bin/init.sh",
     "start": "webpack serve --env=development --config ./config/webpack.config.cjs",
     "clean": "rm -rf build",
     "build:dev": "webpack --config ./config/webpack.config.cjs --env=development",
-    "build:prod": "npm run clean && webpack -c ./config/webpack.config.cjs --env=production"
+    "build:prod": "npm run clean && webpack -c ./config/webpack.config.cjs --env=production",
+    "lint:ts": "eslint --config ./config/.eslintrc.cjs --ignore-path ./config/.eslintignore src",
+    "lint:styles": "stylelint --config ./config/.stylelintrc --ignore-path ./config/.stylelintignore src"
   },
   "sideEffects": [
     "*.css",
