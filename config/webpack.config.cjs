@@ -27,7 +27,12 @@ module.exports = function (environment) {
 				{
 					test: /\.(ts|tsx|js|jsx)$/,
 					exclude: /node_modules/,
-					use: 'ts-loader',
+					use: {
+						loader: 'ts-loader',
+						options: {
+							configFile: `${projectDirectoryPath}/config/tsconfig.json`,
+						},
+					},
 				},
 				{
 					test: /\.(s(a|c)ss)$/,
