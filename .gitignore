@@ -2,3 +2,8 @@ build
 public
 node_modules
 .env
+/.eslintrc*
+/.eslintignore
+/.stylelintrc*
+/.stylelintignore
+/postcss.config*
