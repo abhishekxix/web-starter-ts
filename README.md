@@ -1,0 +1,1 @@
+**NOTE:** Define PORT in the .env before attempting to run the project.
