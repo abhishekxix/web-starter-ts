@@ -5,19 +5,21 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const TerserPlugin = require('terser-webpack-plugin');
 
-dotenv.config();
+dotenv.config({
+	path: path.resolve(__dirname, '.env'),
+});
 
-const buildDirectoryName = 'build';
-const buildDirectoryPath = path.resolve(__dirname, buildDirectoryName);
-const srcDirectoryName = './src';
+const projectDirectoryPath = path.resolve(__dirname, '../');
+const buildDirectoryPath = `${projectDirectoryPath}/build`;
+const srcDirectoryPath = `${projectDirectoryPath}/src`;
 const jsOutputDirectoryName = 'js';
 const cssOutputDirectoryName = 'css';
-const templatesDirectory = './src/templates';
+const templatesDirectoryPath = `${srcDirectoryPath}/templates`;
 
 module.exports = function (environment) {
 	config = {
 		entry: {
-			main: `${srcDirectoryName}/main.ts`,
+			main: `${srcDirectoryPath}/main.ts`,
 		},
 		mode: 'production',
 		module: {
@@ -71,7 +73,7 @@ module.exports = function (environment) {
 		},
 		plugins: [
 			new HtmlWebpackPlugin({
-				template: `${templatesDirectory}/index.html`,
+				template: `${templatesDirectoryPath}/index.html`,
 				filename: 'index.html',
 				title: 'TS and SCSS starter',
 				chunks: ['main'],
@@ -89,7 +91,9 @@ module.exports = function (environment) {
 	if ('development' in environment) {
 		config.devServer = {
 			port: process.env.DEV_SERVER_PORT,
-			static: path.resolve(__dirname, buildDirectoryName),
+			static: {
+				directory: buildDirectoryPath,
+			},
 			open: true,
 			hot: true,
 			liveReload: false,
