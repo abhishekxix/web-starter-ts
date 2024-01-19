@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const dotenv = require('dotenv');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -17,8 +18,9 @@ const cssOutputDirectoryName = 'css';
 const templatesDirectoryPath = `${srcDirectoryPath}/templates`;
 const configDirectoryPath = `${projectDirectoryPath}/config`;
 
+// eslint-disable-next-line func-names
 module.exports = function (environment) {
-	config = {
+	const config = {
 		entry: {
 			main: `${srcDirectoryPath}/main.ts`,
 		},
