@@ -12,3 +12,4 @@
 3. Run `npm run lint:ts`, `npm run lint:styles` to lint ts or scss/css files respectively.
 4. Run `npm run build:prod` for production build.
 5. Run `npm run clean` to delete the built files.
+6. Run `npm run stop` to delete config files for vscode.

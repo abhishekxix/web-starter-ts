@@ -1,0 +1,1 @@
+rm ${PWD}/.eslintrc.cjs ${PWD}/.eslintignore ${PWD}/.stylelintignore

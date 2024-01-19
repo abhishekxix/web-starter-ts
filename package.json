@@ -5,6 +5,7 @@
   "main": "src/main.ts",
   "scripts": {
     "init": "sh .bin/init.sh",
+    "stop": "sh .bin/stop.sh",
     "start": "webpack serve --env=development --config ./config/webpack.config.cjs",
     "clean": "rm -rf build",
     "build:dev": "webpack --config ./config/webpack.config.cjs --env=development",
