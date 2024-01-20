@@ -1,13 +1,11 @@
+/* eslint-disable global-require */
 /* eslint-disable @typescript-eslint/no-var-requires */
-const autoprefixer = require('autoprefixer');
 const purgeCSS = require('@fullhuman/postcss-purgecss');
-const tailwindCSS = require('tailwindcss');
 
 module.exports = {
+	parser: 'postcss-scss',
 	plugins: [
-		'postcss-preset-env',
-		tailwindCSS,
-		autoprefixer,
+		require('autoprefixer'),
 		purgeCSS({ content: ['./src/templates/**/*.html'] }),
 	],
 };
