@@ -1,1 +1,1 @@
-rm ${PWD}/.eslintrc.cjs ${PWD}/.eslintignore ${PWD}/.stylelintignore
+rm ${PWD}/.eslintrc.cjs ${PWD}/.eslintignore ${PWD}/.stylelintignore ${PWD}/tailwind.config.js

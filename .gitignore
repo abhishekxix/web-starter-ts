@@ -7,3 +7,4 @@ node_modules
 /.stylelintrc*
 /.stylelintignore
 /postcss.config*
+/tailwind.config.js
