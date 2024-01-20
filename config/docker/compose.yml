@@ -15,3 +15,8 @@ services:
       - ../../package.json:/home/node/app/package.json
       - ../../package-lock.json:/home/node/app/package-lock.json
     command: 'npm start'
+    networks:
+      - web-starter-ts
+networks:
+  web-starter-ts:
+    driver: bridge
