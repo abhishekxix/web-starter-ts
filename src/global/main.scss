@@ -1,1 +1,36 @@
 @import "./normalize";
+@import "./colors";
+@import "./typography";
+@import "./visual-effects";
+
+:root {
+	--spacing: 0.25rem;
+
+	--breakpoint-sm: 40rem;
+	--breakpoint-md: 48rem;
+	--breakpoint-lg: 64rem;
+	--breakpoint-xl: 80rem;
+	--breakpoint-2xl: 96rem;
+
+	--default-transition-duration: 150ms;
+	--default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+	--default-font-family: var(--font-sans, initial);
+	--default-font-feature-settings: var(
+		--font-sans--font-feature-settings,
+		initial
+	);
+	--default-font-variation-settings: var(
+		--font-sans--font-variation-settings,
+		initial
+	);
+	--default-mono-font-family: var(--font-mono, initial);
+	--default-mono-font-feature-settings: var(
+		--font-mono--font-feature-settings,
+		initial
+	);
+	--default-mono-font-variation-settings: var(
+		--font-mono--font-variation-settings,
+		initial
+	);
+}
